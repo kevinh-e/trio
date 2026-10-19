@@ -1,7 +1,7 @@
-use crate::card::{Card, Value};
+use crate::card::{Card, CardValue};
 
 #[derive(Debug, Clone)]
 pub struct Player {
     cards: Vec<Card>,
-    trios: [Value; 3],
+    trios: [CardValue; 3],
 }
