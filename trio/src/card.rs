@@ -23,9 +23,7 @@ impl Deck {
     }
 
     pub fn new_empty() -> Deck {
-        Deck {
-            cards: Vec::with_capacity(MAX_VALUES * Suit::ALL.len()),
-        }
+        Deck { cards: Vec::new() }
     }
 }
 
@@ -44,8 +42,11 @@ impl fmt::Display for Card {
         };
 
         let value_symbol = match self.value.0 {
-            0 => "A",
-            _ => stringify!(_ + 1),
+            0 => String::from("A"),
+            10 => String::from("J"),
+            11 => String::from("Q"),
+            12 => String::from("K"),
+            _ => format!("{}", self.value.0 + 1),
         };
 
         write!(f, "{} {}", value_symbol, suit_symbol)
