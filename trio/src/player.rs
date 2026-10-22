@@ -1,17 +1,13 @@
 use crate::card::{Card, CardValue};
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Default)]
 pub struct Player {
     cards: Vec<Card>,
     trios: Vec<CardValue>,
 }
 
 impl Player {
-    pub fn new_empty() -> Player {
-        Player {
-            cards: Vec::new(),
-            trios: Vec::new(),
-        }
+    pub fn new() {
+        !todo!()
     }
-    pub fn 
 }

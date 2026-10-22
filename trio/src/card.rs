@@ -2,14 +2,14 @@ use std::fmt;
 
 const MAX_VALUES: usize = 13;
 
-#[derive(Debug, Clone, Eq, PartialEq)]
+#[derive(Debug, Clone, Eq, PartialEq, Default)]
 pub struct Deck {
     pub cards: Vec<Card>,
 }
 
 impl Deck {
     pub fn new(values: usize) -> Deck {
-        let mut d = Deck::new_empty();
+        let mut d = Deck::default();
         for suit in Suit::ALL {
             for value in 0..values {
                 let c = Card {
@@ -20,10 +20,6 @@ impl Deck {
             }
         }
         d
-    }
-
-    pub fn new_empty() -> Deck {
-        Deck { cards: Vec::new() }
     }
 }
 

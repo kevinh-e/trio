@@ -13,7 +13,11 @@ impl Game {
     pub fn new() -> Game {
         Game {
             deck: Deck::new(DEFAULT_DECKSIZE),
-            players: vec![Player::new_empty(); DEFAULT_PLAYER_N],
+            players: vec![Player::default(); DEFAULT_PLAYER_N],
         }
+    }
+
+    pub fn deal() -> Result<(), String> {
+        todo!()
     }
 }
